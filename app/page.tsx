@@ -23,12 +23,14 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <Filter
-        initialOrderBy={currentOrderBy}
-        onOrderByChange={setCurrentOrderBy}
-      />
-      <main className="container mx-auto flex flex-wrap gap-8 p-8">
+      <div className="md:fixed md:inset-x-0 md:top-0 md:z-50">
+        <Header />
+        <Filter
+          initialOrderBy={currentOrderBy}
+          onOrderByChange={setCurrentOrderBy}
+        />
+      </div>
+      <main className="container mx-auto flex flex-wrap gap-8 p-8 md:mt-72">
         {sortedConcerts.map((concert) => (
           <Ticket
             key={concert.id}
