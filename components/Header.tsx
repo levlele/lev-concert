@@ -1,10 +1,10 @@
 export function Header() {
   return (
-    <header className="container flex items-center bg-foreground p-8 text-8xl text-background">
-      <h1 className="font-chackra font-bold uppercase leading-none">
+    <header className="container flex flex-col gap-4 bg-foreground p-8 text-background md:flex-row md:items-center md:gap-0">
+      <h1 className="font-chackra text-5xl font-bold uppercase leading-none md:text-8xl">
         Lev.Concerts
       </h1>
-      <div className="ml-auto w-80">
+      <div className="w-80 md:ml-auto">
         <p className="text-xs">
           Below is a vibrant and joyful collection of the festivals and concerts
           I&apos;ve danced, sang, and celebrated at over the last two decades.
