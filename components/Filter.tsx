@@ -17,7 +17,7 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
   };
 
   return (
-    <div className="container mt-8 flex place-items-center font-chackra">
+    <div className="container flex place-items-center bg-background py-8 font-chackra">
       <h3 className="w-20">Order by</h3>
       <ToggleGroup
         type="single"
