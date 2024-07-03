@@ -6,18 +6,20 @@ import { useState } from "react";
 export default function Home() {
   const [currentOrderBy, setCurrentOrderBy] = useState("date");
 
-  const sortedConcerts =
-    currentOrderBy === "name"
-      ? concerts.slice().sort((a, b) => a.bandName.localeCompare(b.bandName))
-      : currentOrderBy === "date"
-        ? concerts
-            .slice()
-            .sort(
-              (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
-            )
-        : currentOrderBy === "price"
-          ? concerts.slice().sort((a, b) => a.price - b.price)
-          : concerts;
+  const byName = (a: { bandName: string }, b: { bandName: string }) =>
+    a.bandName.localeCompare(b.bandName);
+  const byDate = (a: { date: string }, b: { date: string }) =>
+    new Date(a.date).getTime() - new Date(b.date).getTime();
+  const byPrice = (a: { price: number }, b: { price: number }) =>
+    a.price - b.price;
+
+  const orderBy: { [key: string]: (a: any, b: any) => number } = {
+    name: byName,
+    date: byDate,
+    price: byPrice,
+  };
+
+  const sortedConcerts = concerts.slice().sort(orderBy[currentOrderBy]);
 
   return (
     <>
