@@ -11,7 +11,6 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
   const [orderBy, setOrderBy] = useState(initialOrderBy);
 
   const handleOrderBy = (value: string) => {
-    // setOrderBy(value);
     setOrderBy(value);
     onOrderByChange(value);
   };
