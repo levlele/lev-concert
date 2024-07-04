@@ -12,7 +12,7 @@ export const PerspectiveCard = ({ className, children }: CardProps) => {
 
   return (
     <div
-      className={`cursor-pointer [perspective:1000px] ${className}`}
+      className={`[perspective:1000px] ${className}`}
       onClick={(ev) => {
         ev.currentTarget.style.setProperty("scale", "1.05");
       }}
