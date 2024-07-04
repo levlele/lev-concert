@@ -2,6 +2,25 @@ import { concerts } from "@/lib/concerts";
 import { Nav } from "@/components/index";
 import ConcertClient from "./ConcertClient";
 
+type VariantType =
+  | "green"
+  | "blue"
+  | "orange"
+  | "yellow"
+  | "red"
+  | "skyblue"
+  | "darkblue"
+  | "lightblue"
+  | "amber"
+  | "darkred"
+  | "slate"
+  | "pink"
+  | "black"
+  | "lightorange"
+  | "default"
+  | null
+  | undefined;
+
 export async function generateStaticParams() {
   return concerts.map((concert) => ({
     id: concert.id,
@@ -17,12 +36,14 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
     return <div>Concert not found</div>;
   }
 
+  const validVariant: VariantType = concert.variant as VariantType;
+
   return (
     <>
       <Nav />
       <main className="bg-neutral-900 py-8">
         <div className="container flex flex-wrap gap-8">
-          <ConcertClient concert={concert} />
+          <ConcertClient concert={{ ...concert, variant: validVariant }} />
         </div>
       </main>
     </>
