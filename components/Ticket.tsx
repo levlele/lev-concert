@@ -3,7 +3,7 @@ import { cn, formatDate } from "@/lib/utils";
 import { PerspectiveCard } from "./PerspectiveCard";
 
 const ticketVariants = cva(
-  "ticket flex bold w-[640px] h-56 border-8 rounded [perspective:800px]",
+  "ticket flex bold w-[640px] h-56 border-8 rounded [perspective:800px] shadow-xl",
   {
     variants: {
       variant: {
