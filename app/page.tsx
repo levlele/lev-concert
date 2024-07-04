@@ -1,7 +1,7 @@
 "use client";
 import { Link } from "next-view-transitions";
 import { concerts } from "@/lib/concerts";
-import { Ticket, Filter } from "@/components/index";
+import { Ticket, TicketProps, Filter } from "@/components/index";
 import { useState } from "react";
 
 export default function Home() {
@@ -32,38 +32,20 @@ export default function Home() {
         <div className="container flex flex-wrap gap-8">
           {sortedConcerts.map((concert) => (
             <Link href={`/concerts/${concert.id}`} key={concert.id}>
-              <div style={{ viewTransitionName: concert.id }}>
-                <Ticket
-                  id={concert.id}
-                  festivalName={concert.festivalName}
-                  bandName={concert.bandName}
-                  date={concert.date}
-                  place={concert.place}
-                  location={concert.location}
-                  company={concert.company}
-                  price={concert.price}
-                  small={concert.small}
-                  className="cursor-pointer"
-                  variant={
-                    concert.variant as
-                      | "default"
-                      | "green"
-                      | "blue"
-                      | "orange"
-                      | "yellow"
-                      | "red"
-                      | "skyblue"
-                      | "darkblue"
-                      | "lightblue"
-                      | "amber"
-                      | "darkred"
-                      | "slate"
-                      | "pink"
-                      | "black"
-                      | "lightorange"
-                  }
-                />
-              </div>
+              <Ticket
+                id={concert.id}
+                festivalName={concert.festivalName}
+                bandName={concert.bandName}
+                date={concert.date}
+                place={concert.place}
+                location={concert.location}
+                company={concert.company}
+                price={concert.price}
+                small={concert.small}
+                className="cursor-pointer"
+                style={{ viewTransitionName: concert.id }}
+                variant={concert.variant as TicketProps["variant"]}
+              />
             </Link>
           ))}
         </div>
