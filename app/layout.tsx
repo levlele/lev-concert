@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { ViewTransitions } from "next-view-transitions";
 import { Inter } from "next/font/google";
 import { Chakra_Petch } from "next/font/google";
 import "@/styles/globals.css";
+import { Header, Footer } from "@/components/index";
 
 const inter = Inter({ subsets: ["latin"] });
 const chack = Chakra_Petch({
@@ -21,10 +23,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} ${chack.variable} dark bg-black`}>
-        {children}
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body
+          className={`${inter.className} ${chack.variable} overflow-y-scroll bg-background`}
+        >
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
