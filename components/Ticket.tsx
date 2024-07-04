@@ -3,7 +3,7 @@ import { cn, formatDate } from "@/lib/utils";
 import { PerspectiveCard } from "./PerspectiveCard";
 
 const ticketVariants = cva(
-  "ticket flex bold w-[640px] h-56 border-8 rounded [perspective:800px] shadow-xl",
+  "flex bold w-[640px] h-56 border-8 rounded [perspective:800px] shadow-xl",
   {
     variants: {
       variant: {
@@ -30,7 +30,7 @@ const ticketVariants = cva(
   },
 );
 
-interface TicketProps extends VariantProps<typeof ticketVariants> {
+export interface TicketProps extends VariantProps<typeof ticketVariants> {
   id: string;
   festivalName: string;
   bandName: string;
@@ -40,6 +40,7 @@ interface TicketProps extends VariantProps<typeof ticketVariants> {
   price: number;
   company?: string;
   className?: string;
+  style?: React.CSSProperties;
   small?: boolean;
 }
 
@@ -58,7 +59,13 @@ export function Ticket({
 }: TicketProps) {
   return (
     <PerspectiveCard className={className}>
-      <div id={id} className={cn(ticketVariants({ variant }))}>
+      <div
+        id={id}
+        className={cn(ticketVariants({ variant }))}
+        style={{
+          viewTransitionName: `transition-${id}`,
+        }}
+      >
         <div className="flex w-3/4 flex-col p-4">
           <h2 className="text-xl">{festivalName}</h2>
           <h3
