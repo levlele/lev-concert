@@ -1,6 +1,7 @@
 "use client";
+import { Link } from "next-view-transitions";
 import { concerts } from "@/lib/concerts";
-import { Ticket, Filter, Header } from "@/components/index";
+import { Ticket, Filter } from "@/components/index";
 import { useState } from "react";
 
 export default function Home() {
@@ -23,38 +24,49 @@ export default function Home() {
 
   return (
     <>
-      <div className="md:fixed md:inset-x-0 md:top-0 md:z-50">
-        <Header />
-        <Filter
-          initialOrderBy={currentOrderBy}
-          onOrderByChange={setCurrentOrderBy}
-        />
-      </div>
-      <main className="container mx-auto flex flex-wrap gap-8 p-8 md:mt-72">
-        {sortedConcerts.map((concert) => (
-          <Ticket
-            key={concert.id}
-            id={concert.id}
-            festivalName={concert.festivalName}
-            bandName={concert.bandName}
-            date={concert.date}
-            place={concert.place}
-            location={concert.location}
-            company={concert.company}
-            price={concert.price}
-            small={concert.small}
-            variant={
-              concert.variant as
-                | "default"
-                | "green"
-                | "blue"
-                | "orange"
-                | "yellow"
-                | null
-                | undefined
-            }
-          />
-        ))}
+      <Filter
+        initialOrderBy={currentOrderBy}
+        onOrderByChange={setCurrentOrderBy}
+      />
+      <main className="bg-neutral-900 py-8">
+        <div className="container flex flex-wrap gap-8">
+          {sortedConcerts.map((concert) => (
+            <Link href={`/concerts/${concert.id}`} key={concert.id}>
+              <div style={{ viewTransitionName: concert.id }}>
+                <Ticket
+                  id={concert.id}
+                  festivalName={concert.festivalName}
+                  bandName={concert.bandName}
+                  date={concert.date}
+                  place={concert.place}
+                  location={concert.location}
+                  company={concert.company}
+                  price={concert.price}
+                  small={concert.small}
+                  className="cursor-pointer"
+                  variant={
+                    concert.variant as
+                      | "default"
+                      | "green"
+                      | "blue"
+                      | "orange"
+                      | "yellow"
+                      | "red"
+                      | "skyblue"
+                      | "darkblue"
+                      | "lightblue"
+                      | "amber"
+                      | "darkred"
+                      | "slate"
+                      | "pink"
+                      | "black"
+                      | "lightorange"
+                  }
+                />
+              </div>
+            </Link>
+          ))}
+        </div>
       </main>
     </>
   );
