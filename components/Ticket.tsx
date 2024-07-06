@@ -2,33 +2,66 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn, formatDate } from "@/lib/utils";
 import { PerspectiveCard } from "./PerspectiveCard";
 
-const ticketVariants = cva(
-  "flex bold w-[640px] h-56 border-8 rounded [perspective:800px] shadow-xl",
-  {
-    variants: {
-      variant: {
-        default: "bg-card-foreground text-card ",
-        green: "bg-[#005136] text-emerald-100 border-emerald-200",
-        blue: "bg-[#07163e] text-blue-100 border-blue-200",
-        orange: "bg-[#d55101] text-orange-100 border-orange-200",
-        yellow: "bg-[#f9f52a] text-yellow-900 border-yellow-400",
-        red: "bg-[#e61f23] text-red-100 border-red-200",
-        skyblue: "bg-[#036aa3] text-sky-100 border-sky-200",
-        darkblue: "bg-[#01084f] text-blue-100 border-blue-200",
-        lightblue: "bg-[#15b8f2] text-blue-900 border-blue-200",
-        amber: "bg-[#b7965c] text-amber-100 border-amber-200",
-        darkred: "bg-[#ee2f33] text-red-100 border-red-200",
-        slate: "bg-slate-300 text-slate-900 border-slate-400",
-        pink: "bg-pink-300 text-pink-900 border-pink-400",
-        black: "bg-gray-900 text-gray-100 border-gray-200",
-        lightorange: "bg-[#f0b54e] text-orange-900 border-orange-400",
-      },
+const ticketVariants = cva("border-8", {
+  variants: {
+    ticketBackground: {
+      default: "bg-card-foreground ",
+      green: "bg-[#005136]",
+      blue: "bg-[#07163e]",
+      orange: "bg-[#d55101]",
+      yellow: "bg-[#f9f52a]",
+      red: "bg-[#e61f23]",
+      skyblue: "bg-[#036aa3]",
+      darkblue: "bg-[#01084f]",
+      lightblue: "bg-[#15b8f2]",
+      amber: "bg-[#b7965c]",
+      darkred: "bg-[#ee2f33]",
+      slate: "bg-slate-300",
+      pink: "bg-pink-300",
+      black: "bg-gray-900",
+      lightorange: "bg-[#f0b54e]",
     },
-    defaultVariants: {
-      variant: "default",
+    ticketText: {
+      default: "text-card",
+      green: "text-emerald-100",
+      blue: "text-blue-100",
+      orange: "text-orange-100",
+      yellow: "text-yellow-900",
+      red: "text-red-100",
+      skyblue: "text-sky-100",
+      darkblue: "text-blue-100",
+      lightblue: "text-blue-900",
+      amber: "text-amber-100",
+      darkred: "text-red-100",
+      slate: "text-slate-900",
+      pink: "text-pink-900",
+      black: "text-gray-100",
+      lightorange: "text-orange-900",
+    },
+    ticketBorder: {
+      default: "border-card-foreground",
+      green: "border-emerald-200",
+      blue: "border-blue-200",
+      orange: "border-orange-200",
+      yellow: "border-yellow-400",
+      red: "border-red-200",
+      skyblue: "border-sky-200",
+      darkblue: "border-blue-200",
+      lightblue: "border-blue-200",
+      amber: "border-amber-200",
+      darkred: "border-red-200",
+      slate: "border-slate-400",
+      pink: "border-pink-400",
+      black: "border-gray-200",
+      lightorange: "border-orange-400",
     },
   },
-);
+  defaultVariants: {
+    ticketBackground: "default",
+    ticketText: "default",
+    ticketBorder: "default",
+  },
+});
 
 export interface TicketProps extends VariantProps<typeof ticketVariants> {
   id: string;
@@ -55,18 +88,26 @@ export function Ticket({
   company,
   className,
   small,
-  variant,
+  ticketBackground,
+  ticketText,
+  ticketBorder,
+  ...props
 }: TicketProps) {
   return (
-    <PerspectiveCard className={className}>
+    <PerspectiveCard className={className} {...props}>
       <div
         id={id}
-        className={cn(ticketVariants({ variant }))}
+        className="bold flex h-56 w-[640px] [perspective:800px]"
         style={{
           viewTransitionName: `transition-${id}`,
         }}
       >
-        <div className="flex w-3/4 flex-col p-4">
+        <div
+          className={cn(
+            ticketVariants({ ticketBackground, ticketText, ticketBorder }),
+            "flex w-3/4 flex-col rounded-l-xl border-r-0 p-4",
+          )}
+        >
           <h2 className="text-xl">{festivalName}</h2>
           <h3
             className={`font-chackra font-bold ${small ? "text-3xl" : "text-5xl"}`}
@@ -78,7 +119,21 @@ export function Ticket({
             <p className="text-[12px]">{location}</p>
           </footer>
         </div>
-        <aside className="flex w-1/4 flex-col border-0 border-l-2 border-dashed border-current p-4 text-right">
+        <div
+          className={cn(
+            ticketVariants({ ticketBackground }),
+            "relative mb-2 mt-2 w-0.5 border border-dashed border-neutral-900",
+          )}
+        >
+          <div className="absolute -left-[8px] -top-4 size-4 rounded-full bg-neutral-900" />
+          <div className="absolute -bottom-4 -left-[8px] size-4 rounded-full bg-neutral-900" />
+        </div>
+        <aside
+          className={cn(
+            ticketVariants({ ticketBackground, ticketText, ticketBorder }),
+            "flex w-1/4 flex-col rounded-r-xl border-l-0 p-4 text-right",
+          )}
+        >
           <span className="text-md rounded border border-current px-2 py-1 text-center uppercase">
             {formatDate(date)}
           </span>
