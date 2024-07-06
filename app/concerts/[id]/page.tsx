@@ -41,7 +41,7 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
   return (
     <>
       <Nav />
-      <main className="bg-neutral-900 py-8">
+      <main className="flex-grow bg-neutral-900 py-8">
         <div className="container flex flex-wrap gap-8">
           <ConcertClient concert={{ ...concert, variant: validVariant }} />
         </div>

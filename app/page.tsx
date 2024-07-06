@@ -28,7 +28,7 @@ export default function Home() {
         initialOrderBy={currentOrderBy}
         onOrderByChange={setCurrentOrderBy}
       />
-      <main className="bg-neutral-900 py-8">
+      <main className="flex-grow bg-neutral-900 py-8">
         <div className="container flex flex-wrap gap-8">
           {sortedConcerts.map((concert) => (
             <Link href={`/concerts/${concert.id}`} key={concert.id}>
