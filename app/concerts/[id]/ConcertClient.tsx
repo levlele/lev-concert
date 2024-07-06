@@ -13,7 +13,11 @@ export default function ConcertClient({ concert }: { concert: TicketProps }) {
       company={concert.company}
       price={concert.price}
       small={concert.small}
-      variant={concert.variant as TicketProps["variant"]}
+      ticketBackground={
+        concert.ticketBackground as TicketProps["ticketBackground"]
+      }
+      ticketText={concert.ticketText as TicketProps["ticketText"]}
+      ticketBorder={concert.ticketBorder as TicketProps["ticketBorder"]}
     />
   );
 }

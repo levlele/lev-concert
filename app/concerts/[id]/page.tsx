@@ -43,7 +43,14 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
       <Nav />
       <main className="flex-grow bg-neutral-900 py-8">
         <div className="container flex flex-wrap gap-8">
-          <ConcertClient concert={{ ...concert, variant: validVariant }} />
+          <ConcertClient
+            concert={{
+              ...concert,
+              ticketBackground: validVariant,
+              ticketText: validVariant,
+              ticketBorder: validVariant,
+            }}
+          />
         </div>
       </main>
     </>

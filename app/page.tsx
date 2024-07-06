@@ -44,7 +44,11 @@ export default function Home() {
                 small={concert.small}
                 className="cursor-pointer"
                 style={{ viewTransitionName: concert.id }}
-                variant={concert.variant as TicketProps["variant"]}
+                ticketBackground={
+                  concert.variant as TicketProps["ticketBackground"]
+                }
+                ticketText={concert.variant as TicketProps["ticketText"]}
+                ticketBorder={concert.variant as TicketProps["ticketBorder"]}
               />
             </Link>
           ))}
