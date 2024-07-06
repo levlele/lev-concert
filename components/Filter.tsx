@@ -16,7 +16,12 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
   };
 
   return (
-    <div className="sticky top-0 z-50 bg-foreground py-8 text-background">
+    <div
+      className="sticky top-0 z-50 bg-foreground py-8 text-background"
+      style={{
+        viewTransitionName: "transition-subheader",
+      }}
+    >
       <div className="container flex place-items-center font-chackra">
         <h3 className="w-20">Order by</h3>
         <ToggleGroup

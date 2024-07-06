@@ -1,6 +1,11 @@
 export function Footer() {
   return (
-    <footer className="bg-foreground py-8 text-background">
+    <footer
+      className="bg-foreground py-8 text-background"
+      style={{
+        viewTransitionName: "transition-footer",
+      }}
+    >
       <div className="container text-right">
         Made with 📚🧠🛠️ by{" "}
         <a
