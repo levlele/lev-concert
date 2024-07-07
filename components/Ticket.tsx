@@ -20,6 +20,7 @@ const ticketVariants = cva("border-8", {
       pink: "bg-pink-300",
       black: "bg-gray-900",
       lightorange: "bg-[#f0b54e]",
+      teal: "bg-[#8bdbdd]",
     },
     ticketText: {
       default: "text-card",
@@ -37,6 +38,7 @@ const ticketVariants = cva("border-8", {
       pink: "text-pink-900",
       black: "text-gray-100",
       lightorange: "text-orange-900",
+      teal: "text-teal-900",
     },
     ticketBorder: {
       default: "border-card-foreground",
@@ -54,6 +56,7 @@ const ticketVariants = cva("border-8", {
       pink: "border-pink-400",
       black: "border-gray-200",
       lightorange: "border-orange-400",
+      teal: "border-teal-700",
     },
   },
   defaultVariants: {
@@ -134,7 +137,7 @@ export function Ticket({
             "flex w-1/4 flex-col rounded-r-xl border-l-0 p-4 text-right",
           )}
         >
-          <span className="text-md rounded border border-current px-2 py-1 text-center uppercase">
+          <span className="rounded border border-current px-2 py-1 text-center text-sm uppercase">
             {formatDate(date)}
           </span>
           <p className="mt-2 text-3xl font-bold">${price}</p>
