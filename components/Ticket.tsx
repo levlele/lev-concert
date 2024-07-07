@@ -100,7 +100,7 @@ export function Ticket({
     <PerspectiveCard className={className} {...props}>
       <div
         id={id}
-        className="bold flex h-56 w-[640px] [perspective:800px]"
+        className="flex h-56 w-[640px] [perspective:800px]"
         style={{
           viewTransitionName: `transition-${id}`,
         }}
