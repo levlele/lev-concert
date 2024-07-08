@@ -4,3 +4,4 @@ export * from "./Nav";
 export * from "./PerspectiveCard";
 export * from "./Ticket";
 export * from "./Footer";
+export * from "./NoiseBackground";

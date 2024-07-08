@@ -26,7 +26,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <body
-          className={`${inter.className} ${chack.variable} flex min-h-screen flex-col overflow-y-scroll bg-neutral-900`}
+          className={`${inter.className} ${chack.variable} flex min-h-screen flex-col overflow-y-scroll bg-gradient-to-r from-neutral-900 to-neutral-950`}
         >
           <Header />
           {children}
