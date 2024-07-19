@@ -17,6 +17,7 @@ const config = {
         "2xl": "1400px",
       },
     },
+
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -51,6 +52,54 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        green: {
+          400: "#005136",
+          900: "#003523",
+        },
+        blue: {
+          400: "#07163e",
+          900: "#061229",
+        },
+        orange: {
+          400: "#d55101",
+          900: "#D53200",
+        },
+        yellow: {
+          300: "#f9f52a",
+          600: "#F9C92A",
+        },
+        red: {
+          400: "#e61f23",
+          900: "#C61C1F",
+        },
+        skyblue: {
+          400: "#036aa3",
+          900: "#025484",
+        },
+        midnight: {
+          400: "#01084f",
+          900: "#060441",
+        },
+        lightblue: {
+          400: "#15b8f2",
+          900: "#1193C2",
+        },
+        amber: {
+          400: "#b7965c",
+          900: "#AD8B57",
+        },
+        darkred: {
+          400: "#ee2f33",
+          900: "#D2292D",
+        },
+        lightorange: {
+          400: "#f0b54e",
+          900: "#D7A246",
+        },
+        teal: {
+          300: "#8bdbdd",
+          600: "#8bdbdd",
         },
       },
       borderRadius: {
