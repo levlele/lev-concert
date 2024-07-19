@@ -7,7 +7,7 @@ export function Footer() {
       }}
     >
       <div className="container text-right">
-        Made with 📚🧠🛠️ by{" "}
+        Made for fun by{" "}
         <a
           href="https://leandro-vilanova.com/"
           target="_blank"
