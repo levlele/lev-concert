@@ -39,7 +39,7 @@ export const PerspectiveCard = ({ className, children }: CardProps) => {
         className="group relative transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.1)]"
       >
         {children}
-        <div className="pointer-events-none absolute inset-0 rounded-xl group-hover:bg-[radial-gradient(at_var(--x)_var(--y),rgba(255,255,255,0.2)_20%,transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-xl group-hover:bg-[radial-gradient(at_var(--x)_var(--y),rgba(255,255,255,0.1)_20%,transparent_60%)]" />
       </div>
     </div>
   );
