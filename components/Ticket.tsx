@@ -108,7 +108,7 @@ export function Ticket({
         <div
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "mask-right flex w-3/4 flex-col rounded-l-xl border-r-0 p-4",
+            "mask-right relative flex w-3/4 flex-col rounded-l-xl border-r-4 p-4",
           )}
         >
           <h2 className="text-xl">{festivalName}</h2>
@@ -121,22 +121,12 @@ export function Ticket({
             <p className="text-xs">{place}</p>
             <p className="text-[12px]">{location}</p>
           </footer>
-        </div>
-        <div className="relative mb-3 mt-3 flex w-1 flex-col justify-between">
-          {[...Array(16)].map((_, index) => (
-            <span
-              key={index}
-              className={cn(
-                ticketVariants({ ticketBackground }),
-                "block h-1 w-1 border-none",
-              )}
-            />
-          ))}
+          <div className="noise absolute inset-0 mix-blend-color-burn" />
         </div>
         <aside
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "mask-left flex w-1/4 flex-col rounded-r-xl border-l-0 p-4 text-right",
+            "mask-left relative flex w-1/4 flex-col rounded-r-xl border-l-4 p-4 text-right",
           )}
         >
           <span className="rounded border border-current px-2 py-1 text-center text-sm uppercase">
@@ -152,6 +142,7 @@ export function Ticket({
               />
             </svg>
           </div>
+          <div className="noise absolute inset-0 mix-blend-color-burn" />
         </aside>
       </div>
     </PerspectiveCard>
