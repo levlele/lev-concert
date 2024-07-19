@@ -1,12 +1,7 @@
 "use client";
 import { Link } from "next-view-transitions";
 import { concerts } from "@/lib/concerts";
-import {
-  Ticket,
-  TicketProps,
-  Filter,
-  NoiseBackground,
-} from "@/components/index";
+import { Ticket, TicketProps, Filter } from "@/components/index";
 import { useState } from "react";
 
 export default function Home() {
@@ -33,11 +28,14 @@ export default function Home() {
         initialOrderBy={currentOrderBy}
         onOrderByChange={setCurrentOrderBy}
       />
-      <main className="relative flex-grow bg-gradient-to-r from-neutral-900 to-neutral-950 py-8">
-        <NoiseBackground />
+      <main className="relative flex-grow bg-foreground/75 py-8">
         <div className="container flex flex-wrap gap-8">
           {sortedConcerts.map((concert) => (
-            <Link href={`/concerts/${concert.id}`} key={concert.id}>
+            <Link
+              href={`/concerts/${concert.id}`}
+              key={concert.id}
+              className="twist"
+            >
               <Ticket
                 id={concert.id}
                 festivalName={concert.festivalName}
