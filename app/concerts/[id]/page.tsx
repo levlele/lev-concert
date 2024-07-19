@@ -1,5 +1,5 @@
 import { concerts } from "@/lib/concerts";
-import { Nav, NoiseBackground } from "@/components/index";
+import { Nav } from "@/components/index";
 import ConcertClient from "./ConcertClient";
 
 type VariantType =
@@ -41,8 +41,7 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
   return (
     <>
       <Nav />
-      <main className="relative flex-grow bg-gradient-to-r from-neutral-900 to-neutral-950 py-8">
-        <NoiseBackground />
+      <main className="relative flex-grow bg-foreground/75 py-8">
         <div className="container flex flex-wrap gap-8">
           <ConcertClient
             concert={{
