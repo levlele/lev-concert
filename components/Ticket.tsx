@@ -6,21 +6,21 @@ const ticketVariants = cva("border-8", {
   variants: {
     ticketBackground: {
       default: "bg-card-foreground ",
-      green: "bg-[#005136]",
-      blue: "bg-[#07163e]",
-      orange: "bg-[#d55101]",
-      yellow: "bg-[#f9f52a]",
-      red: "bg-[#e61f23]",
-      skyblue: "bg-[#036aa3]",
-      darkblue: "bg-[#01084f]",
-      lightblue: "bg-[#15b8f2]",
-      amber: "bg-[#b7965c]",
-      darkred: "bg-[#ee2f33]",
-      slate: "bg-slate-300",
-      pink: "bg-pink-300",
-      black: "bg-gray-900",
-      lightorange: "bg-[#f0b54e]",
-      teal: "bg-[#8bdbdd]",
+      green: "bg-gradient-to-b from-green-400 to-green-900",
+      blue: "bg-gradient-to-b from-blue-400 to-blue-900",
+      orange: "bg-gradient-to-b from-orange-400 to-orange-900",
+      yellow: "bg-gradient-to-b from-yellow-300 to-yellow-600",
+      red: "bg-gradient-to-b from-red-400 to-red-900",
+      skyblue: "bg-gradient-to-b from-skyblue-400 to-skyblue-900",
+      darkblue: "bg-gradient-to-b from-midnight-400 to-midnight-900",
+      lightblue: "bg-gradient-to-b from-lightblue-400 to-lightblue-900",
+      amber: "bg-gradient-to-b from-amber-400 to-amber-900",
+      darkred: "bg-gradient-to-b from-darkred-400 to-darkred-400",
+      slate: "bg-gradient-to-b from-slate-300 to-slate-400",
+      pink: "bg-gradient-to-b from-pink-300 to-pink-500",
+      black: "bg-gradient-to-b from-gray-900 to-gray-950",
+      lightorange: "bg-gradient-to-b from-lightorange-400 to-lightorange-900",
+      teal: "bg-gradient-to-b from-teal-300 to-teal-600",
     },
     ticketText: {
       default: "text-card",
@@ -45,14 +45,14 @@ const ticketVariants = cva("border-8", {
       green: "border-emerald-200",
       blue: "border-blue-200",
       orange: "border-orange-200",
-      yellow: "border-yellow-400",
+      yellow: "border-yellow-500",
       red: "border-red-200",
       skyblue: "border-sky-200",
       darkblue: "border-blue-200",
       lightblue: "border-blue-200",
       amber: "border-amber-200",
       darkred: "border-red-200",
-      slate: "border-slate-400",
+      slate: "border-slate-500",
       pink: "border-pink-400",
       black: "border-gray-200",
       lightorange: "border-orange-400",
@@ -108,7 +108,7 @@ export function Ticket({
         <div
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "flex w-3/4 flex-col rounded-l-xl border-r-0 p-4",
+            "mask-right flex w-3/4 flex-col rounded-l-xl border-r-0 p-4",
           )}
         >
           <h2 className="text-xl">{festivalName}</h2>
@@ -122,19 +122,21 @@ export function Ticket({
             <p className="text-[12px]">{location}</p>
           </footer>
         </div>
-        <div
-          className={cn(
-            ticketVariants({ ticketBackground }),
-            "relative mb-2 mt-2 w-0.5 border border-dashed border-neutral-900",
-          )}
-        >
-          <div className="absolute -left-[8px] -top-4 size-4 rounded-full bg-neutral-900" />
-          <div className="absolute -bottom-4 -left-[8px] size-4 rounded-full bg-neutral-900" />
+        <div className="relative mb-3 mt-3 flex w-1 flex-col justify-between">
+          {[...Array(16)].map((_, index) => (
+            <span
+              key={index}
+              className={cn(
+                ticketVariants({ ticketBackground }),
+                "block h-1 w-1 border-none",
+              )}
+            />
+          ))}
         </div>
         <aside
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "flex w-1/4 flex-col rounded-r-xl border-l-0 p-4 text-right",
+            "mask-left flex w-1/4 flex-col rounded-r-xl border-l-0 p-4 text-right",
           )}
         >
           <span className="rounded border border-current px-2 py-1 text-center text-sm uppercase">
