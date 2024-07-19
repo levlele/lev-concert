@@ -57,3 +57,46 @@
     @apply bg-background text-foreground;
   }
 }
+
+.twist:nth-child(2n) {
+  transform: rotate(3.00023deg);
+}
+
+.twist:nth-child(3n) {
+  transform: rotate(4.00023deg);
+}
+
+.twist:nth-child(4n) {
+  transform: rotate(-1.00023deg);
+}
+
+.mask-right {
+  mask:
+    radial-gradient(circle at right top, transparent 12px, black 12px) top,
+    radial-gradient(circle at right bottom, transparent 12px, black 12px) bottom;
+  mask-size: 100% 50%;
+  mask-repeat: no-repeat;
+}
+
+.mask-left {
+  mask:
+    radial-gradient(circle at left top, transparent 12px, black 12px) top,
+    radial-gradient(circle at left bottom, transparent 12px, black 12px) bottom;
+  mask-size: 100% 50%;
+  mask-repeat: no-repeat;
+}
+
+/* .div {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  border: 2px solid black;
+  mask:
+    radial-gradient(circle at center top, transparent 30px, black 31px) top,
+    radial-gradient(circle at center bottom, transparent 30px, black 31px)
+      bottom;
+  mask-size: 100% 51%;
+  mask-repeat: no-repeat;
+} */
+
+/* https://stackoverflow.com/questions/64645955/applying-multiple-mask-image-to-a-single-div */
