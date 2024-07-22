@@ -42,7 +42,28 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
     <>
       <Nav />
       <main className="relative flex-grow bg-foreground/75 py-8">
-        <div className="container flex flex-wrap gap-8">
+        <div className="flex-no-wrap container flex items-start gap-8">
+          <div className="flex flex-col gap-8">
+            <div className="w-auto max-w-prose text-primary-foreground">
+              <p className="max-w-prose text-primary-foreground">
+                {concert.description}
+              </p>
+            </div>
+            <div className="text-primary-foreground">
+              <h2 className="font-chackra text-4xl font-bold uppercase">
+                Setlist
+              </h2>
+              {concert.songs ? (
+                <ol className="mt-4 list-decimal pl-5">
+                  {concert.songs.map((song, index) => (
+                    <li key={index}> {song}</li>
+                  ))}
+                </ol>
+              ) : (
+                <p>I could not find any setlist.</p>
+              )}
+            </div>
+          </div>
           <ConcertClient
             concert={{
               ...concert,
