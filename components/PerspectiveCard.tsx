@@ -12,7 +12,7 @@ export const PerspectiveCard = ({ className, children }: CardProps) => {
 
   return (
     <div
-      className={`[perspective:1000px] ${className}`}
+      className={`shadow-2xl will-change-transform [perspective:1000px] ${className}`}
       onClick={(ev) => {
         ev.currentTarget.style.setProperty("scale", "1.05");
       }}
@@ -36,7 +36,7 @@ export const PerspectiveCard = ({ className, children }: CardProps) => {
           ev.currentTarget.style.setProperty("--x", `${xPercentage * 100}%`);
           ev.currentTarget.style.setProperty("--y", `${yPercentage * 100}%`);
         }}
-        className="group relative transition-transform ease-out hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.1)]"
+        className="group relative transition-transform ease-out will-change-transform hover:[transform:rotateX(var(--x-rotation))_rotateY(var(--y-rotation))_scale(1.1)]"
       >
         {children}
         <div className="pointer-events-none absolute inset-0 rounded-xl group-hover:bg-[radial-gradient(at_var(--x)_var(--y),rgba(255,255,255,0.1)_20%,transparent_60%)]" />
