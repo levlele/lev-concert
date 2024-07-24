@@ -12,7 +12,7 @@ export const PerspectiveCard = ({ className, children }: CardProps) => {
 
   return (
     <div
-      className={`shadow-2xl will-change-transform [perspective:1000px] ${className}`}
+      className={`will-change-transform [perspective:1000px] ${className}`}
       onClick={(ev) => {
         ev.currentTarget.style.setProperty("scale", "1.05");
       }}
