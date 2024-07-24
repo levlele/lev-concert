@@ -28,13 +28,13 @@ export default function Home() {
         initialOrderBy={currentOrderBy}
         onOrderByChange={setCurrentOrderBy}
       />
-      <main className="relative flex-grow bg-foreground/75 py-8">
-        <div className="container z-10 flex flex-wrap gap-8">
+      <main className="relative flex-grow overflow-hidden bg-foreground/75 py-8">
+        <div className="container z-10 grid grid-cols-2 gap-x-8 gap-y-4">
           {sortedConcerts.map((concert) => (
             <Link
               href={`/concerts/${concert.id}`}
               key={concert.id}
-              className="twist z-20 transition-[z-index] hover:z-30"
+              className="twist z-20 shadow-2xl transition-[z-index] hover:z-30"
             >
               <Ticket
                 id={concert.id}
