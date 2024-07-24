@@ -42,7 +42,7 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
     <>
       <Nav />
       <main className="relative flex-grow bg-foreground/75 py-8">
-        <div className="flex-no-wrap container flex items-start gap-8">
+        <div className="container grid grid-cols-2 gap-8">
           <div className="flex flex-col gap-8">
             <div className="w-auto max-w-prose text-primary-foreground">
               <p className="max-w-prose text-primary-foreground">
@@ -54,7 +54,7 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
                 Setlist
               </h2>
               {concert.songs ? (
-                <ol className="mt-4 list-decimal pl-5">
+                <ol className="mt-4 list-decimal pl-5 text-accent">
                   {concert.songs.map((song, index) => (
                     <li key={index}> {song}</li>
                   ))}
@@ -64,14 +64,27 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
               )}
             </div>
           </div>
-          <ConcertClient
-            concert={{
-              ...concert,
-              ticketBackground: validVariant,
-              ticketText: validVariant,
-              ticketBorder: validVariant,
-            }}
-          />
+          <div>
+            <ConcertClient
+              concert={{
+                ...concert,
+                ticketBackground: validVariant,
+                ticketText: validVariant,
+                ticketBorder: validVariant,
+              }}
+            />
+            {concert.playlist && (
+              <iframe
+                className="mt-8"
+                src={`https://open.spotify.com/embed/playlist/${concert.playlist}?utm_source=generator&theme=0`}
+                width="100%"
+                height="352"
+                allowFullScreen={true}
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            )}
+          </div>
         </div>
       </main>
     </>
