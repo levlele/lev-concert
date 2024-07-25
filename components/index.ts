@@ -9,3 +9,4 @@ export * from "./ui/button";
 export * from "./ui/separator";
 export * from "./ui/toggle-group";
 export * from "./ui/toggle";
+export * from "./ui/skeleton";
