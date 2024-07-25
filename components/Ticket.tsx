@@ -100,7 +100,7 @@ export function Ticket({
     <PerspectiveCard className={className} {...props}>
       <div
         id={id}
-        className="flex h-56 [perspective:800px]"
+        className="flex basis-full flex-col [perspective:800px] md:h-56 md:flex-row"
         style={{
           viewTransitionName: `transition-${id}`,
         }}
@@ -108,16 +108,16 @@ export function Ticket({
         <div
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "mask-right relative flex w-3/4 flex-col rounded-l-xl border-r-4 p-4",
+            "mask-bottom mask-right relative flex flex-col rounded-t-xl border-b-4 p-4 md:w-3/4 md:rounded-l-xl md:border-r-4",
           )}
         >
           <h2 className="text-xl">{festivalName}</h2>
           <h3
-            className={`font-chackra font-bold ${small ? "text-3xl" : "text-5xl"}`}
+            className={`font-chackra font-bold ${small ? "text-xl md:text-3xl" : "text-3xl md:text-5xl"}`}
           >
             {bandName}
           </h3>
-          <footer className="mt-auto">
+          <footer className="mt-12 md:mt-auto">
             <p className="text-xs">{place}</p>
             <p className="text-[12px]">{location}</p>
           </footer>
@@ -126,15 +126,15 @@ export function Ticket({
         <aside
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "mask-left relative flex w-1/4 flex-col rounded-r-xl border-l-4 p-4 text-right",
+            "mask-top mask-left relative flex flex-wrap items-center rounded-b-xl border-t-4 p-4 text-right md:w-1/4 md:flex-col md:rounded-r-xl md:border-l-4",
           )}
         >
-          <span className="rounded border border-current px-2 py-1 text-center text-sm uppercase">
+          <span className="rounded border border-current px-2 py-1 text-center text-sm uppercase md:ml-auto">
             {formatDate(date)}
           </span>
-          <p className="mt-2 text-3xl font-bold">${price}</p>
-          <p className="mt-auto">{company}</p>
-          <div className="flex">
+          <p className="ml-2 text-3xl font-bold md:ml-auto md:mt-2">${price}</p>
+          <p className="ml-auto md:ml-0 md:mt-auto">{company}</p>
+          <div className="hidden w-full md:block md:h-auto">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 100">
               <path
                 fill="currentColor"
