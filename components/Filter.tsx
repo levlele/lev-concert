@@ -13,6 +13,7 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
   const handleOrderBy = (value: string) => {
     setOrderBy(value);
     onOrderByChange(value);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
