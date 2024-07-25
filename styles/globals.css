@@ -70,20 +70,40 @@
   transform: rotate(-1.00023deg);
 }
 
-.mask-right {
+.mask-bottom {
   mask:
-    radial-gradient(circle at right top, transparent 12px, black 12px) top,
-    radial-gradient(circle at right bottom, transparent 12px, black 12px) bottom;
-  mask-size: 100% 51%;
+    radial-gradient(circle at bottom left, transparent 12px, black 12px) left,
+    radial-gradient(circle at bottom right, transparent 12px, black 12px) right;
+  mask-size: 51% 100%;
   mask-repeat: no-repeat;
 }
 
-.mask-left {
+.mask-top {
   mask:
-    radial-gradient(circle at left top, transparent 12px, black 12px) top,
-    radial-gradient(circle at left bottom, transparent 12px, black 12px) bottom;
-  mask-size: 100% 51%;
+    radial-gradient(circle at top left, transparent 12px, black 12px) left,
+    radial-gradient(circle at top right, transparent 12px, black 12px) right;
+  mask-size: 51% 100%;
   mask-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .mask-right {
+    mask:
+      radial-gradient(circle at right top, transparent 12px, black 12px) top,
+      radial-gradient(circle at right bottom, transparent 12px, black 12px)
+        bottom;
+    mask-size: 100% 51%;
+    mask-repeat: no-repeat;
+  }
+
+  .mask-left {
+    mask:
+      radial-gradient(circle at left top, transparent 12px, black 12px) top,
+      radial-gradient(circle at left bottom, transparent 12px, black 12px)
+        bottom;
+    mask-size: 100% 51%;
+    mask-repeat: no-repeat;
+  }
 }
 
 .noise {
