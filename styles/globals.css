@@ -58,16 +58,30 @@
   }
 }
 
-.twist:nth-child(2n) {
-  transform: rotate(3.00023deg);
+@media (max-width: 767px) {
+  .twist:nth-child(even) {
+    transform: rotate(3deg);
+    translate: 3% 0%;
+  }
+
+  .twist:nth-child(odd) {
+    transform: rotate(-4deg);
+    translate: -3% 0%;
+  }
 }
 
-.twist:nth-child(3n) {
-  transform: rotate(4.00023deg);
-}
+@media (min-width: 768px) {
+  .twist:nth-child(2n) {
+    transform: rotate(3deg);
+  }
 
-.twist:nth-child(4n) {
-  transform: rotate(-1.00023deg);
+  .twist:nth-child(3n) {
+    transform: rotate(4deg);
+  }
+
+  .twist:nth-child(4n) {
+    transform: rotate(-1deg);
+  }
 }
 
 .mask-bottom {
