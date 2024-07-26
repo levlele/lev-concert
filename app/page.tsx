@@ -28,7 +28,7 @@ export default function Home() {
         initialOrderBy={currentOrderBy}
         onOrderByChange={setCurrentOrderBy}
       />
-      <main className="flex-grow overflow-hidden bg-foreground/75 py-8">
+      <main className="flex-grow overflow-hidden bg-foreground py-8">
         <div className="z-10 mb-8 grid grid-cols-1 place-items-center px-8 md:container md:mb-0 md:grid-cols-2 md:place-items-stretch md:gap-x-8 md:gap-y-4">
           {sortedConcerts.map((concert) => (
             <Link

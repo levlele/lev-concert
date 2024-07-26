@@ -18,7 +18,7 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
 
   return (
     <div
-      className="text-acid-400 sticky top-0 z-50 bg-foreground py-8"
+      className="text-acid-400 sticky top-0 z-50 bg-secondary-foreground py-8"
       style={{
         viewTransitionName: "transition-subheader",
       }}

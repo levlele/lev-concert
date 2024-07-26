@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 export function Nav() {
   return (
     <div
-      className="bg-foreground py-8"
+      className="bg-secondary-foreground py-8"
       style={{
         viewTransitionName: "transition-subheader",
       }}

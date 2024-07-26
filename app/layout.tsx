@@ -24,9 +24,9 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
+      <html lang="en" className="min-h-screen">
         <body
-          className={`${inter.className} ${chack.variable} flex min-h-screen flex-col overflow-y-scroll bg-foreground/75`}
+          className={`${inter.className} ${chack.variable} flex min-h-screen flex-col overflow-y-scroll bg-foreground`}
         >
           <Header />
           {children}
