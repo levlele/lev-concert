@@ -1,18 +1,18 @@
 export function Footer() {
   return (
     <footer
-      className="bg-foreground py-8 text-background"
+      className="text-acid-400 bg-secondary-foreground py-8"
       style={{
         viewTransitionName: "transition-footer",
       }}
     >
       <div className="container text-right">
-        Made for fun by{" "}
+        Hecho por diversión por{" "}
         <a
           href="https://leandro-vilanova.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-chackra font-bold"
+          className="text-acid-600 font-chackra font-bold"
         >
           LEV/D
         </a>

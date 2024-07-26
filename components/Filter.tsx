@@ -24,7 +24,7 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
       }}
     >
       <div className="container flex place-items-center font-chackra">
-        <h3 className="w-20">Order by</h3>
+        <h3 className="w-28">Ordenar por</h3>
         <ToggleGroup
           type="single"
           size="lg"
@@ -37,21 +37,21 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
             value="date"
             aria-label="Toggle Date"
           >
-            Date
+            Fecha
           </ToggleGroupItem>
           <ToggleGroupItem
             variant="outline"
             value="name"
             aria-label="Toggle Name"
           >
-            Name
+            Nombre
           </ToggleGroupItem>
           <ToggleGroupItem
             variant="outline"
             value="price"
             aria-label="Toggle Price"
           >
-            Price
+            Precio
           </ToggleGroupItem>
         </ToggleGroup>
       </div>
