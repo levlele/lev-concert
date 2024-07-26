@@ -101,6 +101,10 @@ const config = {
           300: "#8bdbdd",
           600: "#8bdbdd",
         },
+        acid: {
+          400: "#F1FFD3",
+          600: "#C5FF48",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

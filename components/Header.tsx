@@ -1,7 +1,7 @@
 export function Header() {
   return (
     <header
-      className="bg-background py-8"
+      className="bg-acid-600 py-8"
       style={{
         viewTransitionName: "transition-header",
       }}
