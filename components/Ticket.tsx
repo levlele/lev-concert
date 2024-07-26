@@ -108,7 +108,7 @@ export function Ticket({
         <div
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "mask-bottom mask-right relative flex flex-col rounded-t-xl border-b-4 p-4 md:w-3/4 md:rounded-l-xl md:border-r-4",
+            "mask-bottom mask-right relative flex flex-col rounded-t-xl border-b-4 p-4 md:w-3/4 md:rounded-l-xl md:border-b-8 md:border-r-4",
           )}
         >
           <h2 className="text-xl">{festivalName}</h2>
@@ -126,7 +126,7 @@ export function Ticket({
         <aside
           className={cn(
             ticketVariants({ ticketBackground, ticketText, ticketBorder }),
-            "mask-top mask-left relative flex flex-wrap items-center rounded-b-xl border-t-4 p-4 text-right md:w-1/4 md:flex-col md:rounded-r-xl md:border-l-4",
+            "mask-top mask-left relative flex flex-wrap items-center rounded-b-xl border-t-4 p-4 text-right md:w-1/4 md:flex-col md:rounded-r-xl md:border-l-4 md:border-t-8",
           )}
         >
           <span className="rounded border border-current px-2 py-1 text-center text-sm uppercase md:ml-auto">
