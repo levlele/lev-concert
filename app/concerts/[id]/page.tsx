@@ -42,7 +42,7 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
     <>
       <Nav />
       <main className="relative flex-grow bg-foreground/75 py-8">
-        <div className="container grid grid-cols-2 gap-8">
+        <div className="container grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="flex flex-col gap-8">
             <div className="w-auto max-w-prose text-primary-foreground">
               <p className="max-w-prose text-primary-foreground">
@@ -64,7 +64,7 @@ export default function ConcertPage({ params }: { params: { id: string } }) {
               )}
             </div>
           </div>
-          <div>
+          <div className="order-first md:order-last">
             <ConcertClient
               concert={{
                 ...concert,
