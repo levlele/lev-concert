@@ -12,11 +12,10 @@ export function Header() {
         </h1>
         <div className="w-80 md:ml-auto">
           <p className="text-xs">
-            Below is a vibrant and joyful collection of the festivals and
-            concerts I&apos;ve danced, sang, and celebrated at over the last two
-            decades. From heart-pounding beats to soul-stirring melodies, each
-            event has been a memorable chapter in my musical journey, filled
-            with unforgettable moments and euphoric experiences.
+            Debajo se encuentran listados recitales, conciertos, festivales, y
+            eventos a los que asistí las últimas dos décadas. Solo pop
+            ochentero, rock, metal, indies y oldies que demuestran que se me
+            cayó el DNI.
           </p>
         </div>
       </div>
