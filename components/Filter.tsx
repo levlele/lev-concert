@@ -18,13 +18,13 @@ export function Filter({ initialOrderBy, onOrderByChange }: FilterProps) {
 
   return (
     <div
-      className="text-acid-400 sticky top-0 z-50 bg-secondary-foreground py-8"
+      className="sticky top-0 z-50 bg-secondary-foreground py-8 text-acid-400"
       style={{
         viewTransitionName: "transition-subheader",
       }}
     >
       <div className="container flex place-items-center font-chackra">
-        <h3 className="w-28">Ordenar por</h3>
+        <h3 className="mr-4 text-xs md:text-sm">Ordenar por</h3>
         <ToggleGroup
           type="single"
           size="lg"
